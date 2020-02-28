@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .logo {
+        position: relative;
+        left: 782px;
+        top: 151px;
+        width: 57%;
+        }
+        .git {
+            width: 6%;
+        }
+        #all{
+            position: absolute;
+            left: 800px;
+            top: 327px;
+        }
+       
+            #task {
+            width: 330px;
+            height: 32px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+    }
+    #all button {
+            outline: none;
+            position: relative;
+            bottom: 6px;
+            z-index: 1;
+            padding: 15px 25px;
+            font-size: 16px;
+            width: 170px;
+            border-radius: 12px;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            cursor: pointer;
+            -webkit-box-shadow: 0 9px #2980b9;
+            box-shadow: 0 9px #2980b9;
+}
+    
+    #res {
+        position: relative;
+        top: 12px;
+        color: white;
+        font-family: Montserrat;
+    }
+
+        #all button:hover {
+        -webkit-transform: translateY(3px);
+        transform: translateY(3px);
+        -webkit-box-shadow: 0 6px #2980b9;
+        box-shadow: 0 6px #2980b9;
+        }
+
+        #all button:actif {
+        -webkit-transform: translateY(7px);
+        transform: translateY(7px);
+        -webkit-box-shadow: 0 2px #2980b9;
+        box-shadow: 0 2px #2980b9;
+        }
+        body{
+            background-image: url(1.jpg);
+            background-repeat: no-repeat;
+            background-image: url(1.jpg);
+            background-repeat: no-repeat;
+            background-size: 1929px 947px;
+            margin: 0;
+            padding: 0;
+        }
+       
+        
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="logo">
+        <img src="git.png" class="git">
+        <a href="https://fontmeme.com/github-font/"><img src="https://fontmeme.com/permalink/200228/923a2d167408727f51b691f4ae5a34fa.png" alt="github-font" border="0"></a>
+    </div>
+    <div id="all">
+        <input type="text" id="task">
+    <button onclick="add()">add</button>
+    <div id="res">
+
+    </div>
+    </div>
+    <script>
+        function add(){
+            var all = document.getElementById("res");
+            var task = document.getElementById("task").value;
+            var ntask = document.createElement("input");
+            var nptask = document.createElement("label");
+            var espace = document.createElement("br");
+            var espace1 = document.createElement("br");
+            ntask.setAttribute("type", "checkbox");
+            ntask.setAttribute("class", "h");
+            nptask.className = "ftask";
+            ntask.setAttribute("onclick", "check()")
+            all.appendChild(ntask);
+            all.appendChild(nptask);
+            all.appendChild(espace);
+            all.appendChild(espace1);
+            nptask.innerHTML = task;
+        }
+     
+        
+ function check() {
+   var checkBox = document.getElementsByClassName("h");
+    var text= document.getElementsByClassName("ftask");
+
+     for (let i = 0 ; i<checkBox.length ; i++){
+        if (checkBox[i].checked == true){
+            
+             text[i].style.textDecoration = 'line-through';
+
+          }
+           else {
+            text[i].style.textDecoration = 'none';
+         }
+   }
+
+ }
+    </script>
+</body>
+</html>
